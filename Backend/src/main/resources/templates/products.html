@@ -79,6 +79,11 @@
     document.getElementById("authToggle").textContent = loggedIn ? "Logout" : "Login";
     document.getElementById("authToggle").href = loggedIn ? "logout.html" : "login.html";
 
+    function startpayment(product) {
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+        window.location.href = "payment.html";
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         const API_URL = "http://localhost:8090/product/all";
 
@@ -103,6 +108,7 @@
                     return;
                 }
 
+
                 products.forEach(p => {
                     const card = `
                         <div class="col-md-4">
@@ -111,7 +117,7 @@
                                 <p><strong>Price:</strong> ₹${p.price}</p>
                                 <p><strong>Description:</strong> ${p.description}</p>
                                 <p><strong>Owner:</strong> ${p.ownerName}</p>
-                                <button class="btn btn-${p.category.toLowerCase() === 'rent' ? 'outline-success' : 'outline-primary'} w-100">
+                                <button onclick='startpayment(${JSON.stringify(p)})' class="btn btn-${p.category.toLowerCase() === 'rent' ? 'outline-success' : 'outline-primary'} w-100">
                                     ${p.category.toLowerCase() === 'rent' ? 'Rent Now' : 'Buy'}
                                 </button>
                             </div>
