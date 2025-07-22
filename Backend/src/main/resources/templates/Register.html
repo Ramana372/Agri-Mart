@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>AgriMart | Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .register-box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+      width: 380px;
+    }
+    .register-box h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+    .form-group input:focus {
+      border-color: #2e7d32;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #1b5e20;
+    }
+    .login-link {
+      text-align: center;
+      margin-top: 10px;
+
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="register-box">
+  <h2>Create an AgriMart Account</h2>
+
+  <form th:action="@{/register}" th:object="${user}" method="post">
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" th:field="*{username}" placeholder="Enter username" required />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" th:field="*{email}" placeholder="Enter email" required />
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" th:field="*{password}" placeholder="Enter password" required />
+    </div>
+    <div class="form-group">
+      <label>Role</label>
+      <select th:field="*{role}" required>
+        <option value="">-- Select Role --</option>
+        <option value="FARMER">Farmer</option>
+        <option value="ADMIN">Admin</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn">Register</button>
+  </form>
+
+  <h4  class="login-link">Already have an account? <a href="Login.html" >Login </a></h4>
+</div>
+
+</body>
+</html>
