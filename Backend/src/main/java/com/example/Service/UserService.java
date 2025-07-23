@@ -31,7 +31,7 @@ public class UserService {
         user.setPassword(encodedPassword);
 
         if (user.getRole() == null) {
-            user.setRole(Role.FARMER); // Default role
+            user.setRole(Role.FARMER);
         }
 
         return userRepo.save(user);

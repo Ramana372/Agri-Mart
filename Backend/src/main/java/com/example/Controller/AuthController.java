@@ -41,7 +41,7 @@ public class AuthController {
 
         try {
             UserDetails userDetails = userDetailsService.loadUserByUsername(email);
-            userService.authenticate(email, password); // Ensure this is called before generating the JWT
+            userService.authenticate(email, password);
             String jwt = jwtUtil.generateToken(userDetails);
             return ResponseEntity.ok(Map.of("token", jwt));
         } catch (IllegalArgumentException e) {
