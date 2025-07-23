@@ -4,26 +4,108 @@
     <meta charset="UTF-8">
     <title>AgriMart | Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #f7fff8;
+            color: #222;
         }
-
+        .navbar {
+            box-shadow: 0 2px 8px rgba(34,139,34,0.08);
+        }
+        .navbar-brand {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .navbar-brand i {
+            color: #228B22;
+            font-size: 2rem;
+        }
+        .nav-link.active, .nav-link:hover {
+            color: #228B22 !important;
+            font-weight: 600;
+        }
+        .tab-content {
+            margin-top: 2rem;
+        }
         .product-card {
-            border: 1px solid #ccc;
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: none;
+            border-radius: 18px;
+            box-shadow: 0 2px 16px rgba(34,139,34,0.07);
+            padding: 24px 18px 18px 18px;
+            margin-bottom: 28px;
+            background: #fff;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .product-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(34,139,34,0.13);
+        }
+        .product-card h5 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            color: #228B22;
+        }
+        .product-card .fa {
+            color: #228B22;
+            margin-right: 0.5rem;
+        }
+        .btn-outline-success, .btn-outline-primary {
+            border-radius: 25px;
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+        }
+        .btn-outline-success:hover, .btn-outline-primary:hover {
+            background: #228B22;
+            color: #fff;
+        }
+        .nav-tabs .nav-link.active {
+            background: #228B22;
+            color: #fff !important;
+            border-radius: 25px 25px 0 0;
+            font-weight: 600;
+        }
+        .nav-tabs .nav-link {
+            color: #228B22;
+            font-weight: 500;
+            border: none;
+            border-radius: 25px 25px 0 0;
+            margin: 0 0.2rem;
+        }
+        .nav-tabs {
+            border-bottom: 2px solid #b2f7c1;
+        }
+        footer {
+            background: #228B22;
+            color: #fff;
+            text-align: center;
+            padding: 1.2rem 0 0.7rem 0;
+            margin-top: 60px;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 600px) {
+            .product-card {
+                padding: 14px 6px 10px 6px;
+            }
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="home.html">AgriMart 🌿</a>
+        <a class="navbar-brand" href="home.html"><i class="fa-solid fa-seedling"></i> AgriMart</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -38,10 +120,10 @@
     </div>
 </nav>
 
+<!-- Page Heading -->
 <div class="container text-center my-4">
-    <h2 class="mb-3">Explore Available Products</h2>
+    <h2 class="mb-3" style="color:#228B22; font-family:'Montserrat',sans-serif; font-weight:700;">Explore Available Products</h2>
     <p>Select whether you want to <strong>Rent</strong> or <strong>Buy</strong> tools from fellow farmers</p>
-
     <ul class="nav nav-tabs justify-content-center" id="productTabs" role="tablist">
         <li class="nav-item">
             <button class="nav-link active" id="rent-tab" data-bs-toggle="tab" data-bs-target="#rent" type="button" role="tab">For Rent</button>
@@ -52,24 +134,24 @@
     </ul>
 </div>
 
+<!-- Tab Content -->
 <div class="tab-content container">
-
     <div class="tab-pane fade show active" id="rent" role="tabpanel">
         <div class="row" id="rentContainer"></div>
         <div class="text-center mt-3">
-            <a href="Addproducts.html"><button class="btn btn-outline-secondary">Add Your Own Product</button></a>
+            <a href="Addproducts.html"><button class="btn btn-outline-secondary"><i class="fa fa-plus"></i> Add Your Own Product</button></a>
         </div>
     </div>
-
     <div class="tab-pane fade" id="sell" role="tabpanel">
         <div class="row" id="sellContainer"></div>
         <div class="text-center mt-3">
-            <a href="Addproducts.html"><button class="btn btn-outline-secondary">Add Your Own Product</button></a>
+            <a href="Addproducts.html"><button class="btn btn-outline-secondary"><i class="fa fa-plus"></i> Add Your Own Product</button></a>
         </div>
     </div>
 </div>
 
-<footer class="bg-success text-white text-center p-3 mt-4">
+<!-- Footer -->
+<footer>
     © 2025 AgriMart. Empowering Farmers.
 </footer>
 
@@ -89,52 +171,54 @@
 
         fetch(API_URL)
             .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 return response.json();
             })
             .then(products => {
-                console.log("Fetched products:", products);
-
                 const rentContainer = document.getElementById("rentContainer");
                 const sellContainer = document.getElementById("sellContainer");
 
                 rentContainer.innerHTML = "";
                 sellContainer.innerHTML = "";
 
-                if (products.length === 0) {
+                if (!products || products.length === 0) {
                     rentContainer.innerHTML = "<p class='text-center'>No products available.</p>";
                     return;
                 }
 
-
                 products.forEach(p => {
+                    const lowerCategory = (p.category || '').toLowerCase();
+
                     const card = `
-                        <div class="col-md-4">
-                            <div class="product-card">
-                                <h5>${p.productname}</h5>
-                                <p><strong>Price:</strong> ₹${p.price}</p>
-                                <p><strong>Description:</strong> ${p.description}</p>
-                                <p><strong>Owner:</strong> ${p.ownerName}</p>
-                                <button onclick='startpayment(${JSON.stringify(p)})' class="btn btn-${p.category.toLowerCase() === 'rent' ? 'outline-success' : 'outline-primary'} w-100">
-                                    ${p.category.toLowerCase() === 'rent' ? 'Rent Now' : 'Buy'}
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                    if (p.category.toLowerCase() === "rent") {
+    <div class="col-md-4">
+        <div class="product-card">
+            <h5>${p.productName}</h5>
+            <p><strong>Model:</strong> ${p.modelName || 'N/A'}</p>
+            <p><strong>Company:</strong> ${p.company || 'N/A'}</p>
+            <p><strong>Year:</strong> ${p.year || 'N/A'}</p>
+            <p><strong>Available:</strong> ${p.availabilityStart || 'N/A'} to ${p.availabilityEnd || 'N/A'}</p>
+            <p><strong>Price:</strong> ₹${p.price}</p>
+            <p><strong>Description:</strong> ${p.description}</p>
+            <p><strong>Owner:</strong> ${p.ownerName}</p>
+            <button onclick='startpayment(${JSON.stringify(p)})' class="btn btn-${lowerCategory === 'rent' ? 'outline-success' : 'outline-primary'} w-100">
+                ${lowerCategory === 'rent' ? 'Rent Now' : 'Buy'}
+            </button>
+        </div>
+    </div>
+`;
+
+                    if (lowerCategory === "rent") {
                         rentContainer.insertAdjacentHTML('beforeend', card);
-                    } else {
+                    } else if (lowerCategory === "sell") {
                         sellContainer.insertAdjacentHTML('beforeend', card);
                     }
                 });
             })
             .catch(error => {
                 console.error("Failed to load products:", error);
+                document.getElementById("rentContainer").innerHTML = `<p class='text-danger text-center'>Could not load products. Please try again later.</p>`;
             });
     });
 </script>
-
 </body>
 </html>

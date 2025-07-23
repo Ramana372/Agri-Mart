@@ -1,23 +1,34 @@
 package com.example.Model;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.*;
-import jakarta.persistence.Id;
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "payment")
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "productname")
     private String productName;
+
+    private String modelName;
+    private String company;
+    private int year;
+
     private String description;
+    private String location;
+    private double price;
     private String ownerName;
     private String category;
-    private double price;
+
+    private String startDate;
+    private String endDate;
+
+    private String paymentMethod;
     private int days;
     private double totalAmount;
-    private String paymentMethod;
 }

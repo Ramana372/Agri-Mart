@@ -3,8 +3,14 @@ package com.example.Controller;
 import com.example.Model.Product;
 import com.example.Service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -15,18 +21,19 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("/add")
-    public Product addProduct(@RequestBody Product product){
+    @PostMapping(value = "/add")
+    public Product addProduct(@ModelAttribute Product product) throws IOException {
         return productService.addProduct(product);
     }
 
+
     @GetMapping("/all")
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return productService.getAllProducts();
     }
 
     @GetMapping("/byOwnername")
-    public List<Product> getProductsByOwnerName(@RequestParam String name){
+    public List<Product> getProductsByOwnerName(@RequestParam String name) {
         return productService.getProductsByOwnerName(name);
     }
 
