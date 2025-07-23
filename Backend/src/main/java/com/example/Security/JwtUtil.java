@@ -19,7 +19,7 @@ public class JwtUtil {
     private final Key SECRET_KEY = Keys.hmacShaKeyFor(
             "agriMartSecretKey1239347091279agriMartSecretKey1239347091279".getBytes(StandardCharsets.UTF_8)
     );
-    private final long JWT_EXPIRATION = 1000 * 60 * 60 * 10; // 10 hours
+    private final long JWT_EXPIRATION = 1000 * 60 * 60 * 10;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
