@@ -71,50 +71,57 @@ Home Pages: <img src="githubimages/home1.png" alt="Home Page"> <img src="githubi
 <img src="githubimages/database.png" alt="Database">
 
 ---
-#Core Implementation
 
-Models: Defined JPA entities in Model/.
-Repositories: JpaRepository interfaces in Repo/.
-Services: Business logic in Service/.
-Controllers: RESTful endpoints in Controller/.
+🚀 Core Implementation
 
+  Models: Defined JPA entities in Model/.
 
-#Configuration
+   Repositories: JpaRepository interfaces in Repo/.
 
-CORS settings in Config/CorsConfig.java.
-Security setup in Security/.
+   Services: Business logic handled in Service/.
 
+   Controllers: RESTful endpoints in Controller/.
 
-#Frontend Development
+⚙️ Configuration
 
-Dynamic templates using Thymeleaf (templates/).
-Styled with CSS (static/) with green-themed buttons and cards.
-Forms for listing equipment and payments.
+   CORS: Settings configured in Config/CorsConfig.java.
 
+   Security: Setup in Security/.
 
-#Static Resources & Images
+🎨 Frontend Development
 
-Stored in static/Uploads and githubimages/.
-Implemented image upload and serving functionality.
+   Templates: Dynamic UI built using Thymeleaf (templates/).
 
+   Styling: CSS in static/ with green-themed buttons and cards.
 
-#Version Control
+   Forms: Implemented for listing equipment and payments.
 
-Git repository initialized.
-Code pushed to GitHub repository AgriMart.
+🖼 Static Resources & Images
 
+   Stored in static/Uploads and githubimages/.
 
-#Testing & Debugging
+   Image upload and serving functionality implemented.
 
-Unit and integration tests in test/.
-Debugging via IntelliJ IDEA.
+📂 Version Control
 
+   Project tracked in Git.
 
-#Running the Application
+   Code pushed to GitHub repository: AgriMart.
 
-Run BackendApplication class in IntelliJ IDEA.
-Access at http://localhost:8080.
+🧪 Testing & Debugging
 
+   Unit & Integration Tests: Located in test/.
+
+   Debugging: Performed using IntelliJ IDEA.
+
+▶️ Running the Application
+
+   Open the project in IntelliJ IDEA.
+
+   Run the BackendApplication class.
+
+Access the application at:
+👉 http://localhost:8080
 
 ---
 
@@ -131,20 +138,20 @@ bash# Clone the repository
 git clone https://github.com/yourusername/AgriMart.git
 cd AgriMart/Backend
 
-# Ensure PostgreSQL is installed and 'agrimart' database is created
-# Update application.properties with DB credentials
+#Ensure PostgreSQL is installed and 'agrimart' database is created
+#Update application.properties with DB credentials
 
-# Open in IntelliJ IDEA, resolve Maven dependencies
-# Run the application
+#Open in IntelliJ IDEA, resolve Maven dependencies
+#Run the application
 Access the app at http://localhost:<your-port>.
 
 ---
 
-#Contributing
-Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss.
+##Contributing 
+      Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue            first to discuss.
 
-#Contact
-For questions or feedback, reach out via GitHub issues or email at sadhanalavenkat372@gmail.com.
+##Contact
+      For questions or feedback, reach out via GitHub issues or email at sadhanalavenkat372@gmail.com.
 
 
 
