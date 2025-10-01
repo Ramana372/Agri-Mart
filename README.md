@@ -91,7 +91,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
 - Implemented image upload and serving functionality.
 
 ### 7. Version Control
-- Managed using Git and hosted on GitHub: [AgriMart Repository](https://github.com/Ramana372/AgriMart).
+- Managed using Git and hosted on GitHub: [AgriMart Repository](https://github.com/Ramana372/Agri-Mart).
 
 ### 8. Testing & Debugging
 - Unit and integration tests located in `test/`.
@@ -105,7 +105,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
 ## Setup and Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/AgriMart.git
+   git clone https://github.com/Ramana372/Agri-Mart.
    cd AgriMart/Backend
    ```
 2. **Set Up PostgreSQL**:
@@ -117,7 +117,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
    - Allow Maven to resolve dependencies.
 4. **Run the Application**:
    - Execute the `BackendApplication` class.
-   - Access the app at [http://localhost:8080](http://localhost:8080).
+   - Access the app at http://localhost:<your portnumber.
 
 ## Contributing
 Contributions are welcome! To contribute:
@@ -131,5 +131,5 @@ For major changes, please open an issue first to discuss the proposed changes.
 
 ## Contact
 For questions or feedback, reach out via:
-- **GitHub Issues**: [AgriMart Issues](https://github.com/Ramana372/AgriMart/issues)
+- **GitHub Issues**: [AgriMart Issues](https://github.com/Ramana372)
 - **Email**: sadhanalavenkat372@gmail.com
