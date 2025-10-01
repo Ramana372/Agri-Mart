@@ -91,7 +91,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
 - Implemented image upload and serving functionality.
 
 ### 7. Version Control
-- Managed using Git and hosted on GitHub: [AgriMart Repository](https://github.com/yourusername/AgriMart).
+- Managed using Git and hosted on GitHub: [AgriMart Repository](https://github.com/Ramana372/AgriMart).
 
 ### 8. Testing & Debugging
 - Unit and integration tests located in `test/`.
@@ -100,7 +100,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
 ### 9. Running the Application
 - Open the project in IntelliJ IDEA.
 - Run the `BackendApplication` class.
-- Access the application at: [http://localhost:8080](http://localhost:8080).
+- Access the application at: [http://localhost:8080].
 
 ## Setup and Installation
 1. **Clone the Repository**:
