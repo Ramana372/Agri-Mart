@@ -28,29 +28,7 @@ Users can list equipment for rent or sale, browse available products, process pa
 ---
 
 ## Project Structure
-
-AgriMart/
-├── Backend/
-│ ├── .mvn/
-│ ├── src/
-│ │ ├── main/
-│ │ │ ├── java/com/example/
-│ │ │ │ ├── Config/ # Configuration classes
-│ │ │ │ ├── Controller/ # Request handling
-│ │ │ │ ├── Model/ # JPA Entities (Product, User)
-│ │ │ │ ├── Repo/ # Repositories (ProductRepo, UserRepo)
-│ │ │ │ ├── Security/ # Security configurations
-│ │ │ │ ├── Service/ # Business logic
-│ │ │ │ └── BackendApplication.java # Main class
-│ │ │ └── resources/
-│ │ │ ├── static/ # CSS, JS, images
-│ │ │ ├── templates/ # Thymeleaf HTML templates
-│ │ │ └── application.properties
-│ │ └── test/ # Unit & integration tests
-│ ├── target/ # Build output
-│ ├── .gitattributes
-│ └── .gitignore
-
+![File Structure](githubimages/filestructure.png)
 
 ---
 
@@ -62,7 +40,9 @@ AgriMart/
 
 2. **Database Setup**  
    - PostgreSQL database `agrimart` created locally.  
-   - Configured connection in `application.properties`.
+   - Configured connection in `application.properties`.  
+
+![Database](githubimages/database.png)
 
 3. **Core Implementation**  
    - **Models:** Defined JPA entities in `Model/`.  
@@ -80,7 +60,7 @@ AgriMart/
    - Forms for listing equipment and payments.
 
 6. **Static Resources & Images**  
-   - Stored in `static/`.  
+   - Stored in `static/Uploads` and `githubimages/`.  
    - Implemented image upload and serving functionality.
 
 7. **Version Control**  
@@ -93,7 +73,7 @@ AgriMart/
 
 9. **Running the Application**  
    - Run `BackendApplication` class in IntelliJ IDEA.  
-   - Access at `http://localhost:<yourportnumer>`.
+   - Access at `http://localhost:8080`.
 
 ---
 
@@ -101,7 +81,7 @@ AgriMart/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Ramana372/AgriMart.git
+git clone https://github.com/yourusername/AgriMart.git
 cd AgriMart/Backend
 
 # Ensure PostgreSQL is installed and 'agrimart' database is created
@@ -109,3 +89,36 @@ cd AgriMart/Backend
 
 # Open in IntelliJ IDEA, resolve Maven dependencies
 # Run the application
+Access the app at http://localhost:<your-port>.
+
+Screenshots
+Home Pages
+
+
+Products Page
+
+Listing Form
+
+Payment Summary
+
+Order History
+
+About Page
+
+Contributing
+Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss.
+
+Contact
+For questions or feedback, reach out via GitHub issues or email at sadhanalavenkat372@gmail.com.
+
+---
+
+If you want, I can also **optimize it with badges** (Java, Maven, PostgreSQL) and **better visual layout** so it looks professional on GitHub.  
+
+Do you want me to do that?
+
+
+
+
+
+
