@@ -100,7 +100,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
 ### 9. Running the Application
 - Open the project in IntelliJ IDEA.
 - Run the `BackendApplication` class.
-- Access the application at: [http://localhost:8080].
+- Access the application at: http://localhost:youport number  like 8099.
 
 ## Setup and Installation
 1. **Clone the Repository**:
@@ -117,7 +117,7 @@ AgriMart is a full-stack web application designed to empower farmers by enabling
    - Allow Maven to resolve dependencies.
 4. **Run the Application**:
    - Execute the `BackendApplication` class.
-   - Access the app at http://localhost:<your portnumber.
+   - Access the app at http://localhost:your portnumber like 8099
 
 ## Contributing
 Contributions are welcome! To contribute:
