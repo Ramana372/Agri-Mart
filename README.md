@@ -1,158 +1,165 @@
-# Agri-Mart
+AgriMart
+Overview
+AgriMart is a full-stack web application designed to empower farmers by enabling the rental and sale of agricultural equipment. Built with Spring Boot, PostgreSQL, and Thymeleaf, AgriMart connects farmers directly, eliminating intermediaries and promoting sustainable farming practices. Users can list equipment for rent or sale, browse products, process payments via UPI, and review order history. This project demonstrates proficiency in backend development, database management, version control, and responsive frontend design.
+Features
 
-## Overview
-AgriMart is a digital platform designed to empower farmers by facilitating the rental and sale of agricultural equipment. Built as a full-stack web application using **Spring Boot**, **PostgreSQL**, and **Thymeleaf**, it connects farmers directly, eliminating middlemen and promoting sustainable farming practices.  
+User Authentication: Secure login and registration system for farmers and buyers.
+Product Listing: Farmers can create detailed equipment listings, including name, model, company, year, description, location, and images.
+Product Browsing: Search and filter equipment by type (rent or sale) with visual previews.
+Payment Integration: Seamless UPI payment processing with a summary page and "Pay Now" functionality.
+Order History: View past orders with real-time status updates (e.g., "Order Being Processed").
+Responsive Design: Mobile-friendly interface built with HTML5, CSS3, and Thymeleaf.
 
-Users can list equipment for rent or sale, browse available products, process payments via UPI, and review order history. This project showcases skills in backend development, database management, version control, and frontend design.
+Screenshots
 
----
 
-## Features
-- **User Authentication:** Secure login and registration for farmers and buyers.
-- **Product Listing:** Farmers can list equipment with details like product name, model, company, year, description, location, and images.
-- **Product Browsing:** Search and filter products by type (rent/sale) with visual previews.
-- **Payment Integration:** UPI payment support with a summary page and "Pay Now" functionality.
-- **Order History:** View past orders with status updates (e.g., "Order Being Processed").
-- **Responsive Design:** Mobile-friendly interface using HTML and CSS.
 
----
-Home Pages: <img src="githubimages/home1.png" alt="Home Page"> <img src="githubimages/home2.png" alt="Home Page 2">
+Home Page
+Products Page
+Order History
+Listing Form
+Payment Summary
+About Page
 
-## Technologies Used
-- **Backend:** Spring Boot (RESTful APIs, controllers, services, security)
-- **Database:** PostgreSQL (users, products, orders, payments)
-- **Build Tool:** Maven
-- **Version Control:** Git & GitHub
-- **Frontend:** Thymeleaf, HTML5, CSS3
-- **Programming Paradigm:** Java OOP (encapsulation, inheritance, polymorphism)
 
----
 
-## Project Structure
-![File Structure](githubimages/filestructure.png)
 
----
 
-## Development Process
 
-1. **Project Initialization**  
-   - Created using [Spring Initializr](https://start.spring.io) with dependencies: Spring Web, Spring Data JPA, Spring Security, Thymeleaf, PostgreSQL Driver, Lombok, DevTools.  
-   - Imported into IntelliJ IDEA.
 
-2. **Database Setup**  
-   - PostgreSQL database `agrimart` created locally.  
-   - Configured connection in `application.properties`.  
-   - **Database Commands:**
-     ```sql
-     -- Create database
-     CREATE DATABASE agrimart;
 
-     -- Connect to database
-     \c agrimart
 
-     -- Create users table (example)
-     CREATE TABLE users (
-         id SERIAL PRIMARY KEY,
-         username VARCHAR(50) UNIQUE NOT NULL,
-         password VARCHAR(100) NOT NULL,
-         email VARCHAR(100) UNIQUE NOT NULL
-     );
 
-     -- Create products table (example)
-     CREATE TABLE products (
-         id SERIAL PRIMARY KEY,
-         name VARCHAR(100) NOT NULL,
-         type VARCHAR(10) CHECK (type IN ('rent', 'sale')),
-         description TEXT,
-         location VARCHAR(100),
-         image_url VARCHAR(255)
-     );
----
-<img src="githubimages/database.png" alt="Database">
 
----
+Technologies Used
 
-🚀 Core Implementation
+Backend: Spring Boot (RESTful APIs, controllers, services, security)
+Database: PostgreSQL (managing users, products, orders, and payments)
+Frontend: Thymeleaf, HTML5, CSS3
+Build Tool: Maven
+Version Control: Git & GitHub
+Programming Paradigm: Java Object-Oriented Programming (encapsulation, inheritance, polymorphism)
 
-  Models: Defined JPA entities in Model/.
+Project Structure
 
-   Repositories: JpaRepository interfaces in Repo/.
+Development Process
+1. Project Initialization
 
-   Services: Business logic handled in Service/.
+Initialized using Spring Initializr with dependencies:
+Spring Web
+Spring Data JPA
+Spring Security
+Thymeleaf
+PostgreSQL Driver
+Lombok
+Spring Boot DevTools
 
-   Controllers: RESTful endpoints in Controller/.
 
-⚙️ Configuration
+Imported into IntelliJ IDEA for development.
 
-   CORS: Settings configured in Config/CorsConfig.java.
+2. Database Setup
 
-   Security: Setup in Security/.
+Created a PostgreSQL database named agrimart.
+Configured database connection in application.properties.
+Example database schema:-- Create database
+CREATE DATABASE agrimart;
 
-🎨 Frontend Development
+-- Connect to database
+\c agrimart
 
-   Templates: Dynamic UI built using Thymeleaf (templates/).
+-- Users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL
+);
 
-   Styling: CSS in static/ with green-themed buttons and cards.
+-- Products table
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    type VARCHAR(10) CHECK (type IN ('rent', 'sale')),
+    description TEXT,
+    location VARCHAR(100),
+    image_url VARCHAR(255)
+);
 
-   Forms: Implemented for listing equipment and payments.
 
-🖼 Static Resources & Images
 
-   Stored in static/Uploads and githubimages/.
+3. Core Implementation
 
-   Image upload and serving functionality implemented.
+Models: Defined JPA entities in Model/.
+Repositories: Created JpaRepository interfaces in Repo/.
+Services: Implemented business logic in Service/.
+Controllers: Built RESTful endpoints in Controller/.
 
-📂 Version Control
+4. Configuration
 
-   Project tracked in Git.
+CORS: Configured in Config/CorsConfig.java.
+Security: Set up in Security/ for authentication and authorization.
 
-   Code pushed to GitHub repository: AgriMart.
+5. Frontend Development
 
-🧪 Testing & Debugging
+Templates: Developed dynamic UI using Thymeleaf in templates/.
+Styling: Applied green-themed CSS in static/ for buttons and cards.
+Forms: Created forms for equipment listing and payment processing.
 
-   Unit & Integration Tests: Located in test/.
+6. Static Resources & Images
 
-   Debugging: Performed using IntelliJ IDEA.
+Stored in static/Uploads and githubimages/.
+Implemented image upload and serving functionality.
 
-▶️ Running the Application
+7. Version Control
 
-   Open the project in IntelliJ IDEA.
+Managed using Git and hosted on GitHub: AgriMart Repository.
 
-   Run the BackendApplication class.
+8. Testing & Debugging
 
-Access the application at:
-👉 http://localhost:8080
+Unit and integration tests located in test/.
+Debugged using IntelliJ IDEA's built-in tools.
 
----
+9. Running the Application
 
-#Screenshots
-Products Page: <img src="githubimages/products.png" alt="Products Page">
-Order History: <img src="githubimages/orders.png" alt="Order History">
-Listing Form: <img src="githubimages/list.png" alt="Listing Form">
-Payment Summary: <img src="githubimages/payment.png" alt="Payment Summary">
-About Page: <img src="githubimages/about.png" alt="About Page">
+Open the project in IntelliJ IDEA.
+Run the BackendApplication class.
+Access the application at: http://localhost:8080.
 
----
-#Setup and Installation
-bash# Clone the repository
-git clone https://github.com/yourusername/AgriMart.git
+Setup and Installation
+
+Clone the Repository:git clone https://github.com/yourusername/AgriMart.git
 cd AgriMart/Backend
 
-#Ensure PostgreSQL is installed and 'agrimart' database is created
-#Update application.properties with DB credentials
 
-#Open in IntelliJ IDEA, resolve Maven dependencies
-#Run the application
-Access the app at http://localhost:<your-port>.
-
----
-
-##Contributing 
-      Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue            first to discuss.
-
-##Contact
-      For questions or feedback, reach out via GitHub issues or email at sadhanalavenkat372@gmail.com.
+Set Up PostgreSQL:
+Ensure PostgreSQL is installed.
+Create the agrimart database using the SQL commands above.
+Update application.properties with your database credentials.
 
 
+Resolve Dependencies:
+Open the project in IntelliJ IDEA.
+Allow Maven to resolve dependencies.
 
 
+Run the Application:
+Execute the BackendApplication class.
+Access the app at http://localhost:8080.
+
+
+
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Make your changes and commit (git commit -m 'Add feature').
+Push to the branch (git push origin feature-branch).
+Open a pull request.
+
+For major changes, please open an issue first to discuss the proposed changes.
+Contact
+For questions or feedback, reach out via:
+
+GitHub Issues: AgriMart Issues
+Email: sadhanalavenkat372@gmail.com
