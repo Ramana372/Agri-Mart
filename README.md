@@ -71,7 +71,7 @@ Home Pages: <img src="githubimages/home1.png" alt="Home Page"> <img src="githubi
 <img src="githubimages/database.png" alt="Database">
 
 
-Core Implementation
+##Core Implementation
 
 Models: Defined JPA entities in Model/.
 Repositories: JpaRepository interfaces in Repo/.
@@ -79,38 +79,38 @@ Services: Business logic in Service/.
 Controllers: RESTful endpoints in Controller/.
 
 
-Configuration
+##Configuration
 
 CORS settings in Config/CorsConfig.java.
 Security setup in Security/.
 
 
-Frontend Development
+##Frontend Development
 
 Dynamic templates using Thymeleaf (templates/).
 Styled with CSS (static/) with green-themed buttons and cards.
 Forms for listing equipment and payments.
 
 
-Static Resources & Images
+##Static Resources & Images
 
 Stored in static/Uploads and githubimages/.
 Implemented image upload and serving functionality.
 
 
-Version Control
+##Version Control
 
 Git repository initialized.
 Code pushed to GitHub repository AgriMart.
 
 
-Testing & Debugging
+##Testing & Debugging
 
 Unit and integration tests in test/.
 Debugging via IntelliJ IDEA.
 
 
-Running the Application
+##Running the Application
 
 Run BackendApplication class in IntelliJ IDEA.
 Access at http://localhost:8080.
@@ -118,15 +118,15 @@ Access at http://localhost:8080.
 
 
 
-Screenshots
-Products Page: <img src="githubimages/list.png" alt="Products Page">
-Listing Form: <img src="githubimages/orders.png" alt="Listing Form">
+##Screenshots
+Products Page: <img src="githubimages/products.png" alt="Products Page">
+Order History: <img src="githubimages/orders.png" alt="Order History">
+Listing Form: <img src=" githubimages/list.png" alt="Listing Form">
 Payment Summary: <img src="githubimages/payment.png" alt="Payment Summary">
-Order History: <img src="githubimages/products.png" alt="Order History">
 About Page: <img src="githubimages/about.png" alt="About Page">
 
 
-Setup and Installation
+##Setup and Installation
 bash# Clone the repository
 git clone https://github.com/yourusername/AgriMart.git
 cd AgriMart/Backend
@@ -140,9 +140,10 @@ Access the app at http://localhost:<your-port>.
 
 
 
-Contributing
+##Contributing
 Contributions are welcome! Please fork the repository and submit a pull request. For major changes, open an issue first to discuss.
-Contact
+
+##Contact
 For questions or feedback, reach out via GitHub issues or email at sadhanalavenkat372@gmail.com.
 
 
