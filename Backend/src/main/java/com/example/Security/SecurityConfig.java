@@ -43,11 +43,18 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**", "/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers(
+                                "/auth/**",
+                                "/css/**", "/js/**", "/images/**", "/webjars/**",
+                                "/payment/history",
+                                "/product/admin/all",
+                                "/admin/users"
+                        ).permitAll()
+                        .requestMatchers("/admin/**").hasRole("admin")
                         .requestMatchers("/payment/**").authenticated()
                         .anyRequest().permitAll()
                 )
+
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 

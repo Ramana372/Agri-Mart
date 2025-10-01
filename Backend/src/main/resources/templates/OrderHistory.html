@@ -156,13 +156,13 @@
             })
             .catch(error => {
               console.error(error);
-              document.getElementById("orderTableContainer").innerHTML = '<div class="no-orders">Failed to load order history.</div>';
+              document.getElementById("orderTableContainer").innerHTML = '<div class="no-orders">Please log in to check orders</div>';
             });
   });
 
   const loggedIn = true;
   document.getElementById("authToggle").textContent = loggedIn ? "Logout" : "Login";
-  document.getElementById("authToggle").href = loggedIn ? "logout.html" : "login.html";
+  document.getElementById("authToggle").href = loggedIn ? "login.html" : "login.html";
 </script>
 </body>
 </html>

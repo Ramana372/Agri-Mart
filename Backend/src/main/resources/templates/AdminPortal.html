@@ -106,11 +106,7 @@
     </button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        <li class="nav-item"><a class="nav-link" href="OrderHistory.html">Order History</a></li>
         <li class="nav-item"><a class="nav-link active" href="AdminPortal.html">Admin Portal</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
         <li class="nav-item"><a class="nav-link" href="login.html" id="authToggle">Login</a></li>
       </ul>
     </div>
@@ -148,9 +144,9 @@
 <script>
   const loggedIn = true;
   document.getElementById("authToggle").textContent = loggedIn ? "Logout" : "Login";
-  document.getElementById("authToggle").href = loggedIn ? "logout.html" : "login.html";
+  document.getElementById("authToggle").href = loggedIn ? "login.html" : "login.html";
 
-  fetch("/admin/users")
+  fetch("http://localhost:8090/admin/users")
           .then(response => response.json())
           .then(users => {
             const container = document.getElementById("usersTableContainer");
@@ -158,20 +154,24 @@
               container.innerHTML = '<div class="no-data">No users found.</div>';
               return;
             }
+
+            users = users.filter(user => user.role?.toLowerCase() !== "admin");
+
             let table = `<div class='table-responsive'><table class='table table-bordered table-hover mt-3'>
-                <thead><tr>
-                    <th>ID</th>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                </tr></thead><tbody>`;
+        <thead><tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr></thead><tbody>`;
+
             users.forEach(user => {
               table += `<tr>
-                    <td>${user.id}</td>
-                    <td>${user.username}</td>
-                    <td>${user.email}</td>
-                    <td>${user.role}</td>
-                </tr>`;
+            <td>${user.id}</td>
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td>${user.role}</td>
+        </tr>`;
             });
             table += '</tbody></table></div>';
             container.innerHTML = table;
@@ -180,7 +180,8 @@
             document.getElementById("usersTableContainer").innerHTML = '<div class="no-data">Failed to load users.</div>';
           });
 
-  fetch("/product/admin/all")
+
+  fetch("http://localhost:8090/product/admin/all")
           .then(response => response.json())
           .then(products => {
             const container = document.getElementById("productsTableContainer");
@@ -201,7 +202,7 @@
             products.forEach(p => {
               table += `<tr>
                     <td>${p.id}</td>
-                    <td>${p.productname}</td>
+                    <td>${p.productName}</td>
                     <td>${p.description}</td>
                     <td>${p.location}</td>
                     <td>₹${p.price}</td>
@@ -216,45 +217,53 @@
             document.getElementById("productsTableContainer").innerHTML = '<div class="no-data">Failed to load products.</div>';
           });
 
-  fetch("/payment/admin/all")
-          .then(response => response.json())
+  fetch("http://localhost:8090/payment/history")
+          .then(response => {
+            if (!response.ok) throw new Error("Failed to fetch order history");
+            return response.json();
+          })
           .then(orders => {
             const container = document.getElementById("ordersTableContainer");
+
             if (!orders || orders.length === 0) {
               container.innerHTML = '<div class="no-data">No orders found.</div>';
               return;
             }
-            let table = `<div class='table-responsive'><table class='table table-bordered table-hover mt-3'>
-                <thead><tr>
-                    <th>ID</th>
-                    <th>Product Name</th>
-                    <th>Description</th>
-                    <th>Owner</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Days</th>
-                    <th>Total Amount</th>
-                    <th>Payment Method</th>
-                </tr></thead><tbody>`;
+
+            let table = `
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover mt-3">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Total Amount</th>
+              <th>Payment Method</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+    `;
+
             orders.forEach(order => {
-              table += `<tr>
-                    <td>${order.id}</td>
-                    <td>${order.productName}</td>
-                    <td>${order.description}</td>
-                    <td>${order.ownerName}</td>
-                    <td>${order.category}</td>
-                    <td>₹${order.price}</td>
-                    <td>${order.days}</td>
-                    <td>₹${order.totalAmount}</td>
-                    <td>${order.paymentMethod}</td>
-                </tr>`;
+              table += `
+        <tr>
+          <td>${order.productName}</td>
+          <td>₹${order.totalAmount.toFixed(2)}</td>
+          <td>${order.paymentMethod?.toUpperCase() || "N/A"}</td>
+          <td><span class="badge bg-success">${order.status || 'Order Being Processed'}</span></td>
+        </tr>
+      `;
             });
+
             table += '</tbody></table></div>';
             container.innerHTML = table;
           })
-          .catch(() => {
-            document.getElementById("ordersTableContainer").innerHTML = '<div class="no-data">Failed to load orders.</div>';
+          .catch(error => {
+            console.error(error);
+            document.getElementById("ordersTableContainer").innerHTML = '<div class="no-data">Failed to load order history.</div>';
           });
+
+
 </script>
 </body>
 </html>
